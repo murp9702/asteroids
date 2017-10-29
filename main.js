@@ -31,7 +31,7 @@ $.get("https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-10-18&end_date=2017
 // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
-//generate a random asteroid picture
+//choose a random asteroid picture
   function randomPictureGenerator() {
   var randomNumber = Math.floor(Math.random()*12);
   if (randomNumber < 3) {
@@ -55,17 +55,14 @@ $.get("https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-10-18&end_date=2017
 // jquery to build li items to display
   var ul = $(".list");
   for (var i=0; i<dangerousAsteroidsName.length; i++) {
-    ul.append(`<li id="asteroid${i}">`+ randomPictureGenerator() + dangerousAsteroidsName[i] + " is traveling at " + Math.ceil(dangerousAsteroidsVelocity[i]) + " MPH, and has a diameter of " + Math.ceil(dangerousAsteroidsSize[i]) +" ft" + "</li>");
+    ul.append(`<li class="asteroid" id="asteroid${i}">`+ randomPictureGenerator() + dangerousAsteroidsName[i] + " is traveling at " + Math.ceil(dangerousAsteroidsVelocity[i]) + " MPH, and has a diameter of " + Math.ceil(dangerousAsteroidsSize[i]) +" ft" + "</li>");
   }
 
 
 // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-// jQuery to bring up individual asteroid info on hover
 
-$('img').click(function(){
-  alert(this.id) ;
-})
+
 
 
 })
